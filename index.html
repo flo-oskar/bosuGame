@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,25 +13,39 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
-
     <div class="container">
-         <audio autoplay loop>
-            <source src="Bosu1.mp3" type="audio/mpeg">
-        </audio>
-        <h2>Against all odds</h2>
+        <h2>Against All Odds</h2>
         <div class="game"></div>
         <button class="reset" onclick="window.location.reload()">New Game</button>
+        <button class="play-audio">Play Music</button>
     </div>
-   
+
+    <audio id="background-audio" loop>
+        <source src="Bosu1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
     <script>
-    
-        // Array of image paths (each image appears twice in the array)
+        // Reference to the audio element
+        const audio = document.getElementById('background-audio');
+        const playAudioButton = document.querySelector('.play-audio');
+
+        // Toggle play/pause on button click
+        playAudioButton.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playAudioButton.textContent = "Pause Music";
+            } else {
+                audio.pause();
+                playAudioButton.textContent = "Play Music";
+            }
+        });
+
+        // Array of image paths (each image appears twice for matching)
         const images = [
             "image1.jpeg", "image1.jpeg",
             "image2.jpeg", "image2.jpeg",
-            "image33.png", "image33.png",
+            "image3.png", "image3.png",
             "image4.png", "image4.png",
             "image5.png", "image5.png",
             "image6.jpeg", "image6.jpeg",
@@ -33,30 +53,28 @@
             "image8.png", "image8.png"
         ];
 
-        
-
         // Shuffle the images array
-        const shuffledImages = images.sort(() => Math.random() - 0.5); // Shuffle the images array
+        const shuffledImages = images.sort(() => Math.random() - 0.5);
 
+        // Generate the game grid
         for (let i = 0; i < shuffledImages.length; i++) {
             let box = document.createElement('div');
             box.className = 'item';
 
-            // Create an image element and set the src attribute
+            // Create an image element and set the source
             let img = document.createElement('img');
-            img.src = shuffledImages[i]; // Set the image source to the shuffled image
+            img.src = shuffledImages[i];
             img.alt = "Memory Image";
             img.style.visibility = 'hidden'; // Hide the image initially
 
-            // Append the image to the box
             box.appendChild(img);
 
-            // When the box is clicked, show the image
+            // Box click logic
             box.onclick = function () {
-                img.style.visibility = 'visible'; // Show the image when clicked
+                img.style.visibility = 'visible';
                 box.classList.add('boxOpen');
 
-                setTimeout(function () {
+                setTimeout(() => {
                     const openBoxes = document.querySelectorAll('.boxOpen');
                     if (openBoxes.length > 1) {
                         const firstImg = openBoxes[0].querySelector('img');
@@ -68,8 +86,9 @@
                             openBoxes[0].classList.remove('boxOpen');
                             openBoxes[1].classList.remove('boxOpen');
 
+                            // Check if the game is complete
                             if (document.querySelectorAll('.boxMatch').length === shuffledImages.length) {
-                                alert('Against all odds! Fud Kaito');
+                                alert('Against All Odds! Fud Kaito');
                             }
                         } else {
                             openBoxes[0].querySelector('img').style.visibility = 'hidden';
@@ -87,8 +106,6 @@
     </script>
 </body>
 </html>
-
-
 
 
 
