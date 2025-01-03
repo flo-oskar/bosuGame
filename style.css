@@ -119,7 +119,7 @@ h2 {
 }
 
 
-@media (max-width: 390px) { /* Targeting iPhone 12/15 Pro (width 390px) and smaller screens */
+@media (max-width: 390px) { /* Targeting iPhone 12/15 Pro and similar devices */
     body {
         flex-direction: column;
         padding: 20px;
@@ -133,26 +133,48 @@ h2 {
     }
 
     h2 {
-        font-size: 1.5em; /* Adjust heading size for smaller screens */
+        font-size: 1.5em;
     }
 
     .reset {
         padding: 10px 15px;
-        font-size: 0.8em; /* Reduce button size */
+        font-size: 0.8em;
         letter-spacing: 0.2em;
     }
 
     .game {
-        width: 100%; /* Make game container scale with screen width */
-        max-width: 300px; /* Limit the width to prevent oversized elements */
-        height: auto; /* Adjust height to maintain aspect ratio */
-        gap: 8px; /* Reduce gaps between items */
+        width: 100%; /* Make game container responsive */
+        max-width: 300px; /* Limit the width */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Create a 4x4 grid */
+        gap: 8px; /* Reduce gap between items */
     }
 
     .item {
-        width: calc(25% - 6px); /* Dynamically adjust card size */
-        height: calc(25% - 6px);
-        font-size: 2em; /* Adjust font size inside the item */
+        aspect-ratio: 1; /* Ensures all boxes are perfect squares */
+        background: #ffff;
+        font-size: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        visibility: hidden; /* Initially hidden */
+    }
+
+    /* Consistency in box styles */
+    .boxOpen {
+        background-color: lightblue;
+    }
+
+    .boxMatch {
+        background-color: #e51a4a;
     }
 }
-
