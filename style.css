@@ -182,3 +182,28 @@ h2 {
         background-color: #e51a4a;
     }
 }
+
+.play-audio {
+    padding: 15px 25px; /* Increased padding for a larger button */
+    font-size: 1.2em; /* Slightly larger text size */
+    background-color: #e51a4a; /* Vibrant background color */
+    color: white; /* Contrasting text color */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+}
+
+.play-audio:hover {
+    background-color: #d41e3c; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+.play-audio:active {
+    background-color: #c11a34; /* Even darker red when active */
+    transform: scale(0.95); /* Slightly smaller when clicked */
+}
+
