@@ -26,7 +26,7 @@ body {
     flex-direction: column;
     gap: 30px;
     /*background: #0d614b;*/
-    background: #e51a4a;
+    background: #07043c;
     padding: 40px 60px;
 }
 
@@ -111,7 +111,7 @@ h2 {
 
 /* Matching Cards */
 .boxMatch {
-    background-color: lightgreen;
+    background-color:  #e51a4a;;
 }
 
 .boxOpen {
