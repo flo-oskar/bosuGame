@@ -289,9 +289,11 @@ button:active {
 }
 
 
+
 @media screen and (max-width: 768px) {
     .reset {
         font-size: 0.9em; /* Smaller text size for mobile */
         padding: 10px 15px; /* Slightly reduced padding */
+        letter-spacing: 0.1em; /* Reduce letter spacing for better fit */
     }
 }
