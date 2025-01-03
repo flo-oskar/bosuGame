@@ -287,3 +287,11 @@ button:active {
     color: white;
     transform: scale(0.95); /* Slight scale-down on click */
 }
+
+
+@media screen and (max-width: 768px) {
+    .reset {
+        font-size: 0.9em; /* Smaller text size for mobile */
+        padding: 10px 15px; /* Slightly reduced padding */
+    }
+}
