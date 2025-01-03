@@ -251,3 +251,39 @@ button:active {
         margin: 0 auto; /* Center align */
     }
 }
+
+
+
+
+
+
+
+
+
+.reset {
+    padding: 15px 20px; /* Padding for button */
+    color: #07043c; /* Blue text color */
+    background-color: white; /* White background */
+    border: 2px solid #07043c; /* Blue border */
+    font-size: 1em; /* Font size */
+    font-weight: bold; /* Bold text */
+    letter-spacing: 0.3em;
+    text-transform: uppercase; /* Uppercase text */
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover and active effects for the New Game button */
+.reset:hover {
+    background-color: #07043c; /* Blue background on hover */
+    color: white; /* White text color on hover */
+    transform: scale(1.05); /* Slight scale-up on hover */
+}
+
+.reset:active {
+    background-color: #0d3d66; /* Darker blue when active */
+    color: white;
+    transform: scale(0.95); /* Slight scale-down on click */
+}
