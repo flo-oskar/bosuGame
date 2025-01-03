@@ -85,7 +85,7 @@ h2 {
     content: '';
     position: absolute;
     inset: 0;
-    background: #209d7b;
+    background: #e51a4a;
     transition: 0.25s;
     border-radius: 8px;
     transform: rotateY(0deg);
@@ -111,7 +111,7 @@ h2 {
 
 /* Matching Cards */
 .boxMatch {
-    background-color:  #e51a4a;;
+    background-color:  #e51a4a;
 }
 
 .boxOpen {
