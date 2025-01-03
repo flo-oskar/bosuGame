@@ -124,7 +124,7 @@ h2 {
     body {
         flex-direction: column;
         padding: 20px;
-        overflow: hidden;
+        overflow: hidden; /* Prevents scrolling issues */
     }
 
     .container {
@@ -140,24 +140,24 @@ h2 {
 
     .reset {
         padding: 10px 15px;
-        font-size: 0.8em;
+        font-size: 0.8em; /* Smaller button */
         letter-spacing: 0.2em;
     }
 
     .game {
-        width: 90%; /* Game container width */
-        max-width: 340px; /* Slightly increased max width */
+        width: 90%; /* Game container takes 90% of the viewport width */
+        max-width: 300px; /* Limit max width */
         display: grid;
         grid-template-columns: repeat(4, 1fr); /* Maintain a 4x4 grid */
-        gap: 5px; /* Reduced gaps for compact layout */
+        gap: 5px; /* Smaller gaps for compact layout */
         margin: 0 auto; /* Center the game grid */
     }
 
     .item {
-        width: calc(25% - 4px); /* Slightly increased width with gap adjustment */
+        width: 100%; /* Box width dynamically adjusts */
         aspect-ratio: 1; /* Maintain square shape */
         background: #ffff;
-        font-size: 1.5em;
+        font-size: 1.5em; /* Adjust font size for smaller boxes */
         display: flex;
         justify-content: center;
         align-items: center;
