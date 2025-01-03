@@ -117,3 +117,42 @@ h2 {
 .boxOpen {
     background-color: lightblue;
 }
+
+
+@media (max-width: 390px) { /* Targeting iPhone 12/15 Pro (width 390px) and smaller screens */
+    body {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .container {
+        padding: 20px;
+        width: 100%;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: 1.5em; /* Adjust heading size for smaller screens */
+    }
+
+    .reset {
+        padding: 10px 15px;
+        font-size: 0.8em; /* Reduce button size */
+        letter-spacing: 0.2em;
+    }
+
+    .game {
+        width: 100%; /* Make game container scale with screen width */
+        max-width: 300px; /* Limit the width to prevent oversized elements */
+        height: auto; /* Adjust height to maintain aspect ratio */
+        gap: 8px; /* Reduce gaps between items */
+    }
+
+    .item {
+        width: calc(25% - 6px); /* Dynamically adjust card size */
+        height: calc(25% - 6px);
+        font-size: 2em; /* Adjust font size inside the item */
+    }
+}
+
